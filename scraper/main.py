@@ -1,4 +1,3 @@
-# main.py
 from db import get_db_connection, get_cursor, close_db
 from api import crawl_jobs
 from insertions import (
@@ -7,7 +6,6 @@ from insertions import (
     insert_benefits, insert_industries_v3
 )
 
-# API headers and payload template
 headers = {
     "Accept": "*/*",
     "Accept-Encoding": "gzip, deflate, br, zstd",
