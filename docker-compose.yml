@@ -5,7 +5,7 @@ services:
     image: postgres:14.10-alpine3.18
     container_name: postgres
     volumes:
-      - ./pg-setup:/docker-entrypoint-initdb.d
+      - ./scraper/pg-setup:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -21,11 +21,11 @@ services:
 
   app:
     build:
-      context: .
+      context: ./scraper
       dockerfile: Dockerfile
     container_name: scrap-vnworks-app
     volumes:
-      - .:/app
+      - ./scraper:/app
     environment:
       - TZ=Asia/Ho_Chi_Minh
     depends_on:
