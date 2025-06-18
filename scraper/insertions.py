@@ -1,4 +1,3 @@
-# insertions.py
 def insert_company(cur, company):
     cur.execute("""
         INSERT INTO companies (company_id, company_name, company_logo, company_size)
