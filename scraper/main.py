@@ -191,7 +191,8 @@ def insert_job(cur, job, job_function_id, group_job_function_id):
     ))
 
 def insert_locations_and_job_locations(cur, job):
-    for location in job['workingLocations']:
+    locations = job.get('workingLocations', [])
+    for location in locations:
         geo_loc = location.get('geoLoc', {})
         cur.execute("""
             INSERT INTO locations (location_id, address, city_id, district_id, geo_loc_lat, geo_loc_lon, city_name)
@@ -208,7 +209,8 @@ def insert_locations_and_job_locations(cur, job):
         """, (job['jobId'], location['workingLocationId']))
 
 def insert_skills(cur, job):
-    for skill in job['skills']:
+    skills = job.get('skills', [])
+    for skill in skills:
         cur.execute("""
             INSERT INTO skills (skill_id, skill_name)
             VALUES (%s, %s)
@@ -221,7 +223,8 @@ def insert_skills(cur, job):
         """, (job['jobId'], skill['skillId'], skill['skillWeight']))
 
 def insert_benefits(cur, job):
-    for benefit in job['benefits']:
+    benefits = job.get('benefits', [])
+    for benefit in benefits:
         cur.execute("""
             INSERT INTO benefits (benefit_id, benefit_name)
             VALUES (%s, %s)
@@ -235,7 +238,8 @@ def insert_benefits(cur, job):
 
 def insert_industries_v3(cur, job):
     cur.execute("DELETE FROM job_industries_v3 WHERE job_id = %s", (job['jobId'],))
-    for industry in job['industriesV3']:
+    industries = job.get('industriesV3', [])
+    for industry in industries:
         cur.execute("""
             INSERT INTO industries_v3 (industry_v3_id, industry_v3_name)
             VALUES (%s, %s)
@@ -268,6 +272,9 @@ async def main():
 # Schedule the scraper
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
+    # Run the main function immediately
+    loop.run_until_complete(main())
+    # Set up the scheduler for subsequent runs
     scheduler = AsyncIOScheduler(event_loop=loop)
     scheduler.add_job(main, 'interval', minutes=CONFIG['scraper']['interval_minutes'])
     scheduler.start()
