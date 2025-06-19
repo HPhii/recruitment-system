@@ -1,0 +1,42 @@
+{
+    "database": {
+        "dbname": "recruitment",
+        "user": "postgres",
+        "password": "postgres",
+        "host": "db",
+        "port": "5432"
+    },
+    "request_headers": {
+        "Accept": "*/*",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Accept-Language": "vi",
+        "Connection": "keep-alive",
+        "Content-Type": "application/json",
+        "Host": "ms.vietnamworks.com",
+        "Origin": "https://www.vietnamworks.com",
+        "Referer": "https://www.vietnamworks.com/",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Site": "same-site",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
+        "X-Source": "Page-Container",
+        "sec-ch-ua": "\"Google Chrome\";v=\"137\", \"Chromium\";v=\"137\", \"Not/A)Brand\";v=\"24\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"Windows\""
+    },
+    "retrieve_fields": [
+        "jobId", "jobTitle", "jobUrl", "companyName", "companyId", "workingLocations",
+        "approvedOn", "expiredOn", "onlineOn", "salaryMin", "salaryMax", "prettySalary",
+        "benefits", "jobDescription", "jobRequirement", "skills", "yearsOfExperience",
+        "companyLogo", "companySize", "industries", "industriesV3", "jobFunctionsV3",
+        "groupJobFunctionsV3", "jobLevel", "languageSelected", "numOfApplications",
+        "isSalaryVisible", "isShowLogo", "isShowLogoInSearch", "visibilityDisplay",
+        "priorityOrder", "isMobileHotJob", "isMobileTopJob", "isBoldAndRedJob",
+        "isUrgentJob", "isTopPriority"
+    ],
+    "api_endpoint": "https://ms.vietnamworks.com/job-search/v1.0/search",
+    "scraper": {
+        "max_pages": 100,
+        "interval_minutes": 1
+    }
+}
