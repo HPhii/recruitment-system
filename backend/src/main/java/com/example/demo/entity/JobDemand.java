@@ -4,9 +4,9 @@ import java.time.YearMonth;
 
 
 public class JobDemand {
-    private YearMonth month;
-    private Long jobCount;
-    private boolean isForecast;
+     YearMonth month;
+     Long jobCount;
+     boolean isForecast;
 
     public JobDemand(YearMonth month, Long jobCount, boolean isForecast) {
         this.month = month;
