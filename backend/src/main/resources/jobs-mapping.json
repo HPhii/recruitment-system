@@ -1,0 +1,17 @@
+{
+  "properties": {
+    "jobId": { "type": "long" },
+    "jobTitle": { "type": "text" },
+    "companyId": { "type": "long" },
+    "companyName": { "type": "text" },
+    "salaryMin": { "type": "integer" },
+    "salaryMax": { "type": "integer" },
+    "skills": {
+      "type": "nested",
+      "properties": {
+        "skillId": { "type": "long" },
+        "skillName": { "type": "keyword" }
+      }
+    }
+  }
+}
