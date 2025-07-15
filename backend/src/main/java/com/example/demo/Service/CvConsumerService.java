@@ -1,4 +1,4 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 
 import com.example.demo.config.RabbitMQConfig;
 import com.example.demo.dto.CvMessage;
@@ -19,7 +19,7 @@ public class CvConsumerService {
 
     private final CvService cvService;
 
-    private final CvAiExtractorService cvAiExtractorService;
+    private final com.example.demo.Service.CvAiExtractorService cvAiExtractorService;
 
     private final CvRepository cvRepository;
 
