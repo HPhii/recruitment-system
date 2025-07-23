@@ -1,0 +1,27 @@
+.app_wrapper {
+  padding: 10px 40px 10px 40px;
+  p {
+    margin: 0px;
+  }
+  background: linear-gradient(
+    90deg,
+    rgba(7, 20, 71, 1) 1%,
+    rgba(33, 150, 243, 1) 50%,
+    rgba(1, 9, 74, 1) 100%
+  );
+
+  // background-color: black;
+
+  font-family: "Exo 2", sans-serif;
+  color: white;
+}
+
+.app_text {
+  font-family: "Audiowide", sans-serif;
+  font-size: 60px;
+  font-weight: 100;
+}
+
+.app_container {
+  margin-top: 20px;
+}
