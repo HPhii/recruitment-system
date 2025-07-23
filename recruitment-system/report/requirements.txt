@@ -1,6 +1,0 @@
-pandas
-sqlalchemy
-prophet
-matplotlib
-seaborn
-psycopg2-binary
